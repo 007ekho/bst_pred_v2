@@ -323,8 +323,7 @@ def main():
         
         p = show_shap_values(id,hour,weekday,start_stop)
         st.subheader('Model Prediction Interpretation Plot')
-        st.write('The red color indicates features that contributed to the prediction positively while blow refers to the lower side.
-        The size of each arrow refers to the magnitude of contribution by the arrow ')
+        st.write('The red color indicates features that contributed to the prediction positively while blow refers to the lower side.The size of each arrow refers to the magnitude of contribution by the arrow ')
         st_shap(p)
         
         
