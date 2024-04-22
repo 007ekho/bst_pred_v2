@@ -292,15 +292,15 @@ def main():
         proba_z7 = probas[0][6]  
         if result =="z1":
             st.write(f"stop  {result}")
-            st.write(f"Probability of z1: {proba_z1 * 100:.2f} %")
+            st.write(f"Confidence Probability of z1: {proba_z1 * 100:.2f} %")
         
         elif result =="z2":
             st.write(f"stop  {result}")
-            st.write(f"Probability of z2: {proba_z2 * 100:.2f} %")
+            st.write(f"Confidence Probability of z2: {proba_z2 * 100:.2f} %")
 
         elif result =="z3":
             st.write(f"stop  {result}")
-            st.write(f"Probability of z3: {proba_z3 * 100:.2f} %")
+            st.write(f"Confidence Probability of z3: {proba_z3 * 100:.2f} %")
 
         elif result =="z4":
             st.write(f"stop  {result}")
@@ -308,21 +308,23 @@ def main():
 
         elif result =="z5":
             st.write(f"stop  {result}")
-            st.write(f"Probability of z5: {proba_z5 * 100:.2f} %")  
+            st.write(f"Confidence Probability of z5: {proba_z5 * 100:.2f} %")  
 
         elif result =="z6":
             st.write(f"stop  {result}")
-            st.write(f"Probability of z6: {proba_z6 * 100:.2f} %")
+            st.write(f"Confidence Probability of z6: {proba_z6 * 100:.2f} %")
             
         else:
             st.write(f"stop  {result}")
-            st.write(f"Probability of z7: {proba_z7 * 100:.2f}%")
+            st.write(f"Confidence Probability of z7: {proba_z7 * 100:.2f}%")
             
         
-    if st.button('Show SHAP Values'):
+    if st.button('How did model reach this decision'):
         
         p = show_shap_values(id,hour,weekday,start_stop)
         st.subheader('Model Prediction Interpretation Plot')
+        st.write('The red color indicates features that contributed to the prediction positively while blow refers to the lower side.
+        The size of each arrow refers to the magnitude of contribution by the arrow ')
         st_shap(p)
         
         
